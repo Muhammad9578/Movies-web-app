@@ -1,0 +1,531 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap'); 
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #0e3445 url(Vectors.png) bottom center no-repeat;  /* Dark blue background */
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-size: contain;
+}
+#root,.app
+{
+  width: 100%;
+}
+/* Container for the Login */
+.login-container {
+  max-width: 400px;
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+/* Login Form */
+.login-form { 
+  border-radius: 10px;
+  padding: 2rem; 
+  text-align: center;
+}
+
+.login-form h2 {
+  color: white;
+  margin-bottom: 1.85rem;
+  font-size: 64px;
+  font-weight:600;
+}
+
+/* Input fields */
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 0.65rem 0;
+  border-radius: 10px;
+  border: none;
+  background-color: #224957;
+  color: white;
+}
+
+.login-form input::placeholder {
+  color: #b8b8b8;
+}
+
+/* Remember Me Section */
+.remember-me {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 1.8rem 0;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+}
+
+.remember-me label {
+  color: #b8b8b8;
+  font-size: 14px;
+}
+.remember-me input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  appearance: none; /* Hides the default checkbox style */
+  background-color: #224957;
+  border-radius: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  position: relative;
+}
+.remember-me input[type="checkbox"]:checked::before {
+  content: "✓";
+  color: white;
+  font-size: 12px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Login Button */
+.login-form a {
+  width: 100%;
+  padding: 1.1rem;
+  background-color: #2BD17E; /* Green button */
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-size: 16px;
+  text-decoration: none; 
+  display: flex;
+  justify-content: center;
+}
+
+.login-form a:hover {
+  background-color: #17a873;
+}
+/* Empty Page */
+.empty-movie-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.empty-movie-container h2 {
+  font-size: 48px;
+    color: white;
+    margin-bottom: 2.4rem;
+    font-weight: 600;
+}
+
+/* Add Movie Button */
+.empty-movie-container button {
+  padding: 1.1rem 1.7rem;
+  background-color: #2BD17E;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 700; 
+}
+
+.empty-movie-container button:hover {
+  background-color: #17a873;
+}
+
+/* Responsive Styling */
+.list-container {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  margin-top: 86px;
+}
+
+.list-header h1 {
+  font-size: 48px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.header-actions button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 0;
+  display: flex;font-weight: 700;
+  align-items: center;
+  gap: 15px;
+}
+
+.movies-grid {
+  display: flex; 
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 122px;
+  margin-bottom: 85px;
+}
+
+.movie-card {
+  background-color: #092C39;
+  border-radius: 12px;
+  overflow: hidden; 
+  transition: transform 0.3s ease;
+  width: 23.3%;
+  padding: 0.5rem;
+}
+
+.movie-card:hover {
+  opacity: 55%;
+}
+
+.movie-card img {
+  width: 100%;
+}
+
+.movie-card h3 {
+  margin: 15px 0; 
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.movie-card p {
+  margin: 0 0 13px 0;
+  font-size: 14px;
+  font-weight: 400;
+  color: #fff;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 105px;
+  margin-bottom: 215px;
+}
+
+.pagination button { 
+  color: white;
+  border: none;
+  padding: 0.5rem 0.6rem;
+  margin: 0 0.5rem;
+  cursor: pointer; 
+  background: transparent;
+  font-size: 16px;
+  font-weight: 700;
+}
+ 
+
+.pagination span {
+  font-size: 16px;
+  font-weight: 700;
+  background: #092C39;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.pagination span.active { 
+  background: #2BD17E; 
+  margin-right: 8px;
+}
+.pagination span:hover { 
+  background: #2BD17E;  
+}
+
+
+/* Create Movie */
+/* CreateMovie.css */
+.create-movie-container {
+  width: 100%;
+  margin: 50px auto;
+  max-width: 1200px;
+}
+
+.create-movie-container h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+  text-align: left;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 115px;
+  padding: 0 1rem;
+}
+
+.image-upload {
+  display: flex;  
+  margin-bottom: 185px;
+  margin-top: 120px;
+  padding: 0 1rem;
+
+}
+
+.image-preview {
+  width: 40%;
+  height: 500px;
+  border: 2px dashed white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 15px;
+  background: #224957;
+}
+
+.image-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.file-input {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #0b4f5f;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.movie-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30%;
+  margin-left: 10.4%;
+}
+
+.movie-form input[type="text"] 
+{
+  width: 100%;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  background-color: #224957;
+  color: white;
+  font-size: 1rem;
+} 
+.movie-form input[type="number"] 
+{
+  width: 50%;
+  padding: 13px;
+  border-radius: 10px;
+  border: none;
+  background-color: #224957;
+  color: white;
+  font-size: 1rem;
+}
+
+.movie-form input::placeholder {
+  color: #fff;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 45px;
+}
+
+.cancel-button,
+.submit-button {
+  width: 48%;
+  padding: 17px 0;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.cancel-button {
+  background-color: transparent;
+  border: 1px solid white;
+  color: white;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.cancel-button:hover {
+  background-color: white;
+  color: #072a35;
+}
+
+.submit-button {
+  background-color: #2BD17E;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #08a573;
+}
+.image-preview p {
+  display: grid;
+  font-size: 16px;
+  color: #fff;
+}
+.image-preview.mob
+{
+  display: none;
+}
+
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .login-container {
+    padding: 1rem;
+  }
+  .empty-movie-container h2 {
+    font-size: 1.75rem;
+  }
+
+  .login-form {
+    padding: 1.5rem;
+  }.empty-movie-container button {
+    padding: 0.6rem 1.2rem;
+  }
+  .empty-movie-container h2 {
+    font-size: 1.5rem;
+  }
+
+  .empty-movie-container button {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    background: #0e3445 url(Vectors-m.png) bottom center no-repeat;  /* Dark blue background */ 
+  }
+  .login-form h2 {
+    font-size: 48px;
+  }
+  .login-form button { 
+    padding: 1.1rem;
+  }
+  .empty-movie-container h2 {
+    font-size: 32px;
+  }
+  .empty-movie-container button
+  {
+    width: 100%;
+    font-size: 16px;
+        padding: 18px 0;
+  }
+  .movie-card { 
+    width: 47.7%; 
+  }
+  .list-container {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
+  }
+  .movies-grid {
+    gap: 1rem;
+  }
+  .list-header h1 {
+    font-size: 32px;
+
+  }
+  .list-header h1 img
+  {
+    width: 20px;
+  }
+  .header-actions button
+  {
+    color: transparent;
+  }
+  .header-actions button img
+  {
+    width: 20px;
+  }
+  .list-header { 
+    margin-top: 58px;
+}
+.movies-grid { 
+  margin-top: 80px;
+  margin-bottom: 85px;
+}
+.movie-card
+{
+  padding: 0;
+}
+.movie-card h3
+{
+  padding: 0 0.8rem;
+  margin: 15px 0 20px 0;
+  font-size: 16px;
+}
+.movie-card p
+{
+  padding: 0 0.8rem;
+}
+.pagination
+{
+  margin-top: 55px;
+  margin-bottom: 150px;
+}
+.create-movie-container h1 {
+  font-size: 32px;  
+  margin-top: 75px;
+  padding: 0 1rem;
+}
+.image-upload { 
+  margin-bottom: 185px;
+  margin-top: 80px;
+}
+.image-upload
+{
+  display: block;
+}
+.image-preview,.movie-form,.movie-form input[type="number"]
+{
+  width: 100%;
+  margin: 0;
+}
+.image-preview
+{
+  height: 370px;
+}
+.image-preview.desk
+{
+  display: none;
+}
+.image-preview.mob
+{
+  display: flex;
+}
+.form-buttons { 
+  margin-top: 23px;
+}
+ 
+}  
+ 
